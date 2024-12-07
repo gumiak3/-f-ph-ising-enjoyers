@@ -1,9 +1,11 @@
 import * as THREE from "three";
 
-export default function EarthPath() {
+const LLRADIUS = 2.05;
+
+export default function Equator() {
   const points = [];
 
-  const radius = 2.2;
+  const radius = LLRADIUS;
   const numPoints = 100;
   const angleStep = (Math.PI * 2) / numPoints;
 
@@ -14,7 +16,7 @@ export default function EarthPath() {
     const y = 0;
     points.push(new THREE.Vector3(x, y, z));
   }
-  points.push(new THREE.Vector3(2.2, 0, 0));
+  points.push(new THREE.Vector3(LLRADIUS, 0, 0));
 
   const geometry = new THREE.BufferGeometry().setFromPoints(points);
   const material = new THREE.LineBasicMaterial({
@@ -24,3 +26,4 @@ export default function EarthPath() {
 
   return <line geometry={geometry} material={material} />;
 }
+
