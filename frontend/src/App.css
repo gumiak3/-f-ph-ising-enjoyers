@@ -64,33 +64,36 @@ canvas {
   width: 100vw; /* Make the canvas 100% of the viewport width */
   height: 100vh; /* Make the canvas 100% of the viewport height */
 }
-
-.side-panel {
+.side-panel,
+.selected-places-panel {
   position: absolute;
   background-color: rgb(15 23 42);
   box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.1);
   margin: 10px;
   z-index: 10;
-  text-align: center;
   color: white;
-  border-radius: 20px;
   overflow: hidden;
+  border-radius: 10px;
 }
+
 .side-panel button {
   background: inherit;
   color: inherit;
   border: none;
   outline: none;
+  width: 100%;
 }
+
 .place-selection {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
   text-align: left;
   padding: 20px;
 }
+.place-selection form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 .place-selection input {
-  margin-bottom: 10px;
   background: inherit;
 }
 .place-selection button {
@@ -122,5 +125,38 @@ canvas {
 }
 
 .place-selection.expanded {
-  height: 600px;
+  height: fit-content;
+}
+
+.selected-places-panel {
+  position: absolute;
+  right: 0;
+}
+
+.selected-places-panel h2 {
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+.selected-places-panel {
+  padding: 20px;
+}
+
+.selected-places-panel ul {
+  list-style-type: none;
+  overflow: auto;
+  max-height: 300px;
+}
+
+.selected-places-panel li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.selected-places-panel button {
+  padding: 10px;
+  background: inherit;
+  color: white;
 }
