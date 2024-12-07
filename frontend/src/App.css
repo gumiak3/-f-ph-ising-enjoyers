@@ -40,3 +40,20 @@
 .read-the-docs {
   color: #888;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  height: 100%;
+}
+
+canvas {
+  display: block;
+  width: 100vw;  /* Make the canvas 100% of the viewport width */
+  height: 100vh; /* Make the canvas 100% of the viewport height */
+}
+
