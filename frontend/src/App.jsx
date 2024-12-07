@@ -4,10 +4,12 @@ import { OrbitControls, Sphere, Stars } from "@react-three/drei";
 import EarthPath from "./components/EarthPath";
 import Earth from "./components/Earth";
 import "./App.css";
+import SidePanel from "./components/control_panel/SidePanel";
 
 function App() {
   return (
     <div className="page" style={{ height: "100vh" }}>
+      <SidePanel />
       <Canvas>
         <Stars />
         <Earth />
